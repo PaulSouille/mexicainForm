@@ -7,26 +7,25 @@
 
   <ion-navbar>
     <ion-title text-center>
-        <img src="assets/imgs/GoHEP.png" width="100">
+        <img src="assets/imgs/mexicain.png" width="100">
     </ion-title>
   </ion-navbar>
 
 </ion-header>
 
 <ion-content text-center>
-<img src="assets/imgs/photoJPO.png" width="1000">
-
+<p> MexicainJS</p>
 <form [formGroup]="credentialsForm">
 
   <ion-item>
-    <ion-label floating>Email</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['email']" value="testUser@gmail.com"
-        type="email"></ion-input>
+    <ion-label style="color:white" floating>Login</ion-label>
+    <ion-input style="color:black" [formControl]="credentialsForm.controls['login']" value=""
+        type="text"></ion-input>
   </ion-item>
 
   <ion-item>
-    <ion-label floating>Mot de passe</ion-label>
-    <ion-input [formControl]="credentialsForm.controls['password']"value="admin"
+    <ion-label style="color:white" floating>Mot de passe</ion-label>
+    <ion-input style="color:black" [formControl]="credentialsForm.controls['password']"value=""
         type="password"></ion-input>
   </ion-item>
 
@@ -38,13 +37,7 @@
     </ion-col>
   </ion-row>
 
-  <ion-row>
-    <ion-col text-center>
-      <button ion-button clear color="light" (click)="onCreateAccount()">
-        Créer un compte
-      </button>
-    </ion-col>
-  </ion-row>
+
 
 </form>
 </ion-content>

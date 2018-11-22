@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Mexicano</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+
+<ion-content padding>
+
+  <ion-item *ngIf="!ifData" class="square">
+      <p>Pas d'évènements</p>
+
+    </ion-item>
+
+  <ion-col  col-10 style="margin: auto; padding-left: 1em;" *ngFor="let event of events">
+    <ion-item  class="square">
+      <p  class="white">{{event.event}}</p>
+
+      <p *ngIf="event.isLink"class="link" (click)="goInternet(event.response)">Liens</p>
+      <p *ngIf="!event.isLink" >{{event.response}}</p>
+
+
+      <p  class="red">Créateur : {{event.name}}</p>
+      <button *ngIf="role_id=='1'" ion-button clear color="light" class="btnRefuse" (click)="delete(event.id)">
+        Delete
+      </button>
+    </ion-item>
+
+    </ion-col>
+</ion-content>       

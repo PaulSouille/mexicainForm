@@ -1,9 +1,10 @@
 import { ApiProvider } from './../../providers/api/api';
 import { HomePage } from './../home/home';
-import { CreateAccountPage } from './../create-account/create-account';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import CryptoJS from 'crypto-js';
+
 /**
  * Generated class for the LoginPage page.
  *
@@ -19,11 +20,11 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginPage {
   credentialsForm: FormGroup;
   account : Account;
-
+ 
   constructor(public navCtrl: NavController,private events:Events, public navParams: NavParams,private alertCtrl:AlertController,private formBuilder: FormBuilder,private apiProvider: ApiProvider
     ) {
       this.credentialsForm = this.formBuilder.group({
-        email: [''],
+        login: [''],
         password: [''],
       
       });
@@ -41,8 +42,10 @@ export class LoginPage {
     alert.present();
   }
   onSignIn() {
-    console.log(this.credentialsForm.controls['email'].value)
-      this.apiProvider.login(this.credentialsForm.controls['email'].value,this.credentialsForm.controls['password'].value).subscribe(data => {
+    console.log(this.credentialsForm.controls['login'].value);
+    console.log(CryptoJS.SHA256(this.credentialsForm.controls['password'].value).toString(CryptoJS.enc.Hex));
+
+      this.apiProvider.login(this.credentialsForm.controls['login'].value,CryptoJS.SHA256(this.credentialsForm.controls['password'].value).toString(CryptoJS.enc.Hex).toUpperCase()).subscribe(data => {
         console.log(data)
         if(data['error']=='ERROR_EMAIL'){
           this.setAlert('Attention','Email incorrect.')
@@ -55,6 +58,7 @@ export class LoginPage {
             if(data['error']=='SUCCESS'){
               localStorage.setItem("user_id", data.data.id);
               localStorage.setItem('role_id',data.data.role_id);
+              localStorage.setItem('apiKey',data.data.apiKey);
               this.events.publish('user:changed', localStorage.getItem('role_id')); 
               this.navCtrl.setRoot(HomePage);
             }
@@ -66,8 +70,6 @@ export class LoginPage {
     
   }
 
-  onCreateAccount() {
-    this.navCtrl.push(CreateAccountPage)
-  }
+
 
 }

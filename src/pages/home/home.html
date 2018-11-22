@@ -3,20 +3,37 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title>Bienvenue au Campus HEP</ion-title>
+    <ion-title>Mexicano</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-<ion-content padding>
 
-<img src="assets/imgs/logohep.png" style="align-items: center;display:none" class="slide" />
-
-<p></p>
-
-<img src="assets/imgs/poster.png" />
-
-<p></p><p></p><p></p>
-
-<img src="assets/imgs/ecoles.png" />
-</ion-content>
+<ion-content text-center>
+  <p> MexicainJS</p>
+  <form [formGroup]="credentialsForm">
+  
+    <ion-item>
+      <ion-label style="color:white" floating>Event</ion-label>
+      <ion-input style="color:black" [formControl]="credentialsForm.controls['event']" value=""
+          type="text"></ion-input>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label style="color:white" floating>Response</ion-label>
+      <ion-input style="color:black" [formControl]="credentialsForm.controls['response']"value=""
+          type="text"></ion-input>
+    </ion-item>
+  
+    <ion-row>
+      <ion-col text-center>
+        <button ion-button block color="button" (click)="addEvent()">
+          Ajouter
+        </button>
+      </ion-col>
+    </ion-row>
+  
+  
+  
+  </form>
+  </ion-content>
