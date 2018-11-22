@@ -1,5 +1,4 @@
 import { DisplayEventPage } from './../pages/display-event/display-event';
-import { AdminPage } from './../pages/admin/admin';
 import { Component, ViewChild } from '@angular/core';
 import { Nav, Platform, Events } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
@@ -37,7 +36,6 @@ export class MyApp {
           this.pages = [
             { title: 'Accueil', component: HomePage },
             {title:"Les évènements",component:DisplayEventPage},
-            {title:"Administration",component:AdminPage}
           ];
         }
 

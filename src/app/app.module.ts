@@ -1,9 +1,6 @@
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { DisplayEventPage } from './../pages/display-event/display-event';
-import { AdminPage } from './../pages/admin/admin';
-import { HTTP } from '@ionic-native/http';
 import { Vibration } from '@ionic-native/vibration';
-import { HttpClient } from '@angular/common/http';
 import { LoginPage } from './../pages/login/login';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -20,7 +17,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     LoginPage,
-    AdminPage,
     DisplayEventPage
     
   ],
@@ -35,7 +31,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     LoginPage,
-    AdminPage,
     DisplayEventPage
   ],
   providers: [
@@ -46,7 +41,6 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
 
     BarcodeScanner,
     Vibration,
-    HTTP,   
      InAppBrowser
 
   ]
