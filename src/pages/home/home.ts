@@ -33,7 +33,6 @@ export class HomePage {
   }
   addEvent() {
       this.apiProvider.addEvent(this.credentialsForm.controls['event'].value,this.credentialsForm.controls['response'].value,localStorage.getItem('user_id')).subscribe(data => {
-        console.log(data['error']);
         if(data['error']=='ERROR_PARAM'){
           this.setAlert('Attention','Remplissez les champs.')
         }

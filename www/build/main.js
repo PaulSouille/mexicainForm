@@ -72,7 +72,6 @@ var DisplayEventPage = /** @class */ (function () {
         var _this = this;
         this.apiProvider.deleteEvent(id, this.apiKey, this.user_id).subscribe(function (data) {
             if (data['error'] === "SUCCESS") {
-                console.log('SUCCESS DELETE');
                 _this.fillData();
             }
         });
@@ -148,10 +147,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage.prototype.onSignIn = function () {
         var _this = this;
-        console.log(this.credentialsForm.controls['login'].value);
-        console.log(__WEBPACK_IMPORTED_MODULE_5_crypto_js___default.a.SHA256(this.credentialsForm.controls['password'].value).toString(__WEBPACK_IMPORTED_MODULE_5_crypto_js___default.a.enc.Hex));
         this.apiProvider.login(this.credentialsForm.controls['login'].value, __WEBPACK_IMPORTED_MODULE_5_crypto_js___default.a.SHA256(this.credentialsForm.controls['password'].value).toString(__WEBPACK_IMPORTED_MODULE_5_crypto_js___default.a.enc.Hex).toUpperCase()).subscribe(function (data) {
-            console.log(data);
             if (data['error'] == 'ERROR_EMAIL') {
                 _this.setAlert('Attention', 'Email incorrect.');
             }
@@ -511,7 +507,6 @@ var HomePage = /** @class */ (function () {
     HomePage.prototype.addEvent = function () {
         var _this = this;
         this.apiProvider.addEvent(this.credentialsForm.controls['event'].value, this.credentialsForm.controls['response'].value, localStorage.getItem('user_id')).subscribe(function (data) {
-            console.log(data['error']);
             if (data['error'] == 'ERROR_PARAM') {
                 _this.setAlert('Attention', 'Remplissez les champs.');
             }

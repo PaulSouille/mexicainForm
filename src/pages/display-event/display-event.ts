@@ -63,7 +63,6 @@ export class DisplayEventPage {
   delete(id){
     this.apiProvider.deleteEvent(id,this.apiKey,this.user_id).subscribe(data=>{
       if(data['error']==="SUCCESS"){
-        console.log('SUCCESS DELETE');
         this.fillData();
       }
     })

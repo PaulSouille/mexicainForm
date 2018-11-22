@@ -42,11 +42,8 @@ export class LoginPage {
     alert.present();
   }
   onSignIn() {
-    console.log(this.credentialsForm.controls['login'].value);
-    console.log(CryptoJS.SHA256(this.credentialsForm.controls['password'].value).toString(CryptoJS.enc.Hex));
 
       this.apiProvider.login(this.credentialsForm.controls['login'].value,CryptoJS.SHA256(this.credentialsForm.controls['password'].value).toString(CryptoJS.enc.Hex).toUpperCase()).subscribe(data => {
-        console.log(data)
         if(data['error']=='ERROR_EMAIL'){
           this.setAlert('Attention','Email incorrect.')
         }
