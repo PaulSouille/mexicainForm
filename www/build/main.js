@@ -156,12 +156,14 @@ var LoginPage = /** @class */ (function () {
                     _this.setAlert('Attention', 'Mot de passe incorrect');
                 }
                 else {
-                    if (data['error'] == 'SUCCESS') {
-                        localStorage.setItem("user_id", data.data.id);
-                        localStorage.setItem('role_id', data.data.role_id);
-                        localStorage.setItem('apiKey', data.data.apiKey);
-                        _this.events.publish('user:changed', localStorage.getItem('role_id'));
-                        _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_1__home_home__["a" /* HomePage */]);
+                    if (data.data.isActive) {
+                        if (data['error'] == 'SUCCESS') {
+                            localStorage.setItem("user_id", data.data.id);
+                            localStorage.setItem('role_id', data.data.role_id);
+                            localStorage.setItem('apiKey', data.data.apiKey);
+                            _this.events.publish('user:changed', localStorage.getItem('role_id'));
+                            _this.navCtrl.setRoot(__WEBPACK_IMPORTED_MODULE_1__home_home__["a" /* HomePage */]);
+                        }
                     }
                 }
             }
@@ -169,7 +171,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n        <img src="assets/imgs/mexicain.png" width="100">\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content text-center>\n\n<p> MexicainJS</p>\n\n<form [formGroup]="credentialsForm">\n\n\n\n  <ion-item>\n\n    <ion-label style="color:white" floating>Login</ion-label>\n\n    <ion-input style="color:black" [formControl]="credentialsForm.controls[\'login\']" value=""\n\n        type="text"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label style="color:white" floating>Mot de passe</ion-label>\n\n    <ion-input style="color:black" [formControl]="credentialsForm.controls[\'password\']"value=""\n\n        type="password"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <button ion-button block color="button" (click)="onSignIn()">\n\n        Connexion\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n\n\n\n\n</form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n  <ion-navbar>\n\n    <ion-title text-center>\n\n        <img src="assets/imgs/mexicain.png" width="100">\n\n    </ion-title>\n\n  </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content text-center>\n\n<p> MexicainJS</p>\n\n<form [formGroup]="credentialsForm">\n\n\n\n  <ion-item>\n\n    <ion-label  floating>Login</ion-label>\n\n    <ion-input  [formControl]="credentialsForm.controls[\'login\']" value=""\n\n        type="text"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-item>\n\n    <ion-label  floating>Mot de passe</ion-label>\n\n    <ion-input  [formControl]="credentialsForm.controls[\'password\']"value=""\n\n        type="password"></ion-input>\n\n  </ion-item>\n\n\n\n  <ion-row>\n\n    <ion-col text-center>\n\n      <button ion-button block color="button" (click)="onSignIn()">\n\n        Connexion\n\n      </button>\n\n    </ion-col>\n\n  </ion-row>\n\n\n\n\n\n\n\n</form>\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["b" /* Events */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavParams */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_4__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_0__providers_api_api__["a" /* ApiProvider */]])
     ], LoginPage);
@@ -530,7 +532,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mexicano</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content text-center>\n  <p> MexicainJS</p>\n  <form [formGroup]="credentialsForm">\n  \n    <ion-item>\n      <ion-label style="color:white" floating>Event</ion-label>\n      <ion-input style="color:black" [formControl]="credentialsForm.controls[\'event\']" value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label style="color:white" floating>Response</ion-label>\n      <ion-input style="color:black" [formControl]="credentialsForm.controls[\'response\']"value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block color="button" (click)="addEvent()">\n          Ajouter\n        </button>\n      </ion-col>\n    </ion-row>\n  \n  \n  \n  </form>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mexicano</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content text-center>\n  <p> MexicainJS</p>\n  <form [formGroup]="credentialsForm">\n  \n    <ion-item>\n      <ion-label  floating>Event</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'event\']" value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label  floating>Response</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'response\']"value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block color="button" (click)="addEvent()">\n          Ajouter\n        </button>\n      </ion-col>\n    </ion-row>\n  \n  \n  \n  </form>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\paul-\Desktop\mexicainOutils\mexicainForm\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["h" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0__providers_api_api__["a" /* ApiProvider */]])
     ], HomePage);

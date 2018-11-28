@@ -52,13 +52,17 @@ export class LoginPage {
             this.setAlert('Attention','Mot de passe incorrect')
           }
           else{
-            if(data['error']=='SUCCESS'){
-              localStorage.setItem("user_id", data.data.id);
-              localStorage.setItem('role_id',data.data.role_id);
-              localStorage.setItem('apiKey',data.data.apiKey);
-              this.events.publish('user:changed', localStorage.getItem('role_id')); 
-              this.navCtrl.setRoot(HomePage);
-            }
+            if(data.data.isActive){
+
+            
+              if(data['error']=='SUCCESS'){
+                localStorage.setItem("user_id", data.data.id);
+                localStorage.setItem('role_id',data.data.role_id);
+                localStorage.setItem('apiKey',data.data.apiKey);
+                this.events.publish('user:changed', localStorage.getItem('role_id')); 
+                this.navCtrl.setRoot(HomePage);
+              }
+          }
           }
         }
  

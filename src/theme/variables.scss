@@ -34,18 +34,13 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #EF9A57,
+  primary:    #488aff,
+  secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222,
-  secondary:  #EF9A57,
-  third:      #EF9A57,
-  button:     #D75522,
+  dark:       #222
 );
-$text-color:white;
-$app-background: linear-gradient(to bottom, color($colors, secondary) 0%, color($colors, third) 100%);
-$background-color: transparent;
-$toolbar-background: transparent;
+
 
 // App iOS Variables
 // --------------------------------------------------
