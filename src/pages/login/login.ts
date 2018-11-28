@@ -1,16 +1,7 @@
-import { ApiProvider } from './../../providers/api/api';
-import { HomePage } from './../home/home';
+import { AuthService } from './../../service/auth.service';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams, AlertController, Events } from 'ionic-angular';
+import { IonicPage } from 'ionic-angular';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import CryptoJS from 'crypto-js';
-
-/**
- * Generated class for the LoginPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -21,7 +12,7 @@ export class LoginPage {
   credentialsForm: FormGroup;
   account : Account;
  
-  constructor(public navCtrl: NavController,private events:Events, public navParams: NavParams,private alertCtrl:AlertController,private formBuilder: FormBuilder,private apiProvider: ApiProvider
+  constructor(private AuthService:AuthService,private formBuilder: FormBuilder
     ) {
       this.credentialsForm = this.formBuilder.group({
         login: [''],
@@ -33,42 +24,9 @@ export class LoginPage {
   ionViewDidLoad() {
   }
 
-  setAlert(titleAlert,contentAlert){
-    let alert = this.alertCtrl.create({
-      title: titleAlert,
-      subTitle: contentAlert,
-      buttons: ['Fermer']
-    });
-    alert.present();
-  }
   onSignIn() {
+    this.AuthService.login(this.credentialsForm.controls['login'].value,this.credentialsForm.controls['password'].value);
 
-      this.apiProvider.login(this.credentialsForm.controls['login'].value,CryptoJS.SHA256(this.credentialsForm.controls['password'].value).toString(CryptoJS.enc.Hex).toUpperCase()).subscribe(data => {
-        if(data['error']=='ERROR_EMAIL'){
-          this.setAlert('Attention','Email incorrect.')
-        }
-        else{
-          if(data['error']=='ERROR_PASSWORD'){
-            this.setAlert('Attention','Mot de passe incorrect')
-          }
-          else{
-            if(data.data.isActive){
-
-            
-              if(data['error']=='SUCCESS'){
-                localStorage.setItem("user_id", data.data.id);
-                localStorage.setItem('role_id',data.data.role_id);
-                localStorage.setItem('apiKey',data.data.apiKey);
-                this.events.publish('user:changed', localStorage.getItem('role_id')); 
-                this.navCtrl.setRoot(HomePage);
-              }
-          }
-          }
-        }
- 
-      });
-    
-    
   }
 
 

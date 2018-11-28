@@ -43,7 +43,7 @@ export class HomePage {
           
           else{
             if(data['error']=='ERROR'){
-              this.setAlert('Succès','Une erreur est survenue.');
+              this.setAlert('Attention','Une erreur est survenue.');
               }
               else{
                 if(data['error']=='SUCCESS'){

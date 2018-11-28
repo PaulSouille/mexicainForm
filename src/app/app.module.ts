@@ -1,3 +1,5 @@
+import { AlertTool } from './../tools/alert.tool';
+import { AuthService } from './../service/auth.service';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 import { DisplayEventPage } from './../pages/display-event/display-event';
 import { Vibration } from '@ionic-native/vibration';
@@ -38,10 +40,11 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     ApiProvider,
-
+    AuthService,
     BarcodeScanner,
     Vibration,
-     InAppBrowser
+     InAppBrowser,
+     AlertTool
 
   ]
 })
