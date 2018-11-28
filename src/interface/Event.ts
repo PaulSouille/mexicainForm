@@ -4,6 +4,7 @@ export interface Event {
     response:string;    
     user_id: number;
     name : number;
+    isAskDelete:number;
     isLink : boolean ;
 
 }

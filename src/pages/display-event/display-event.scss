@@ -1,34 +1,40 @@
 page-display-event {
-    .link{
-        color:blue;
+    .link {
+        color: blue;
     }
 }
 
-.red
-{
-  color:red !important;
+.red {
+    color: red !important;
 }
 
-.btnRefuse
-{
-  color: white;
-  background-color: #d9534f;
+.btnRefuse {
+    color: white;
+    background-color: #d9534f;
 }
 
-.btnValidate
-{
-  color: white;
-  background-color: #5cb85c;
+.btnValidate {
+    color: white;
+    background-color: #5cb85c;
 }
 
-.square
-{
-  background:#DCDCDC	;
-  opacity: 0.8 !important;
-  border-radius: 10px;
+.square {
+    background: #DCDCDC;
+    opacity: 0.8 !important;
+    border-radius: 10px;
 }
 
-.white
-{
-  color: black !important;
+.white {
+    color: black !important;
+}
+
+.squareAskDelete {
+    background: #F08080;
+    opacity: 0.8 !important;
+    border-radius: 10px;
+}
+
+.btnAskDelete {
+    color: white;
+    background-color: #5cb85c;
 }

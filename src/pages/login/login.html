@@ -5,39 +5,37 @@
 -->
 <ion-header>
 
-  <ion-navbar>
-    <ion-title text-center>
-        <img src="assets/imgs/mexicain.png" width="100">
-    </ion-title>
-  </ion-navbar>
+    <ion-navbar>
+        <ion-title text-center>
+            <img src="assets/imgs/mexicain.png" width="100">
+        </ion-title>
+    </ion-navbar>
 
 </ion-header>
 
 <ion-content text-center>
-<p> MexicainJS</p>
-<form [formGroup]="credentialsForm">
+    <p> MexicainJS</p>
+    <form [formGroup]="credentialsForm">
 
-  <ion-item>
-    <ion-label  floating>Login</ion-label>
-    <ion-input  [formControl]="credentialsForm.controls['login']" value="usersio"
-        type="text"></ion-input>
-  </ion-item>
+        <ion-item>
+            <ion-label floating>Login</ion-label>
+            <ion-input [formControl]="credentialsForm.controls['login']" value="" type="text"></ion-input>
+        </ion-item>
 
-  <ion-item>
-    <ion-label  floating>Mot de passe</ion-label>
-    <ion-input  [formControl]="credentialsForm.controls['password']"value="pwsio"
-        type="password"></ion-input>
-  </ion-item>
+        <ion-item>
+            <ion-label floating>Mot de passe</ion-label>
+            <ion-input [formControl]="credentialsForm.controls['password']" value="" type="password"></ion-input>
+        </ion-item>
 
-  <ion-row>
-    <ion-col text-center>
-      <button ion-button block color="button" (click)="onSignIn()">
+        <ion-row>
+            <ion-col text-center>
+                <button ion-button block color="button" (click)="onSignIn()">
         Connexion
       </button>
-    </ion-col>
-  </ion-row>
+            </ion-col>
+        </ion-row>
 
 
 
-</form>
+    </form>
 </ion-content>

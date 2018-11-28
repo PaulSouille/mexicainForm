@@ -25701,3 +25701,14 @@ page-display-event .link {
 .white {
   color: black !important;
 }
+
+.squareAskDelete {
+  background: #F08080;
+  opacity: 0.8 !important;
+  border-radius: 10px;
+}
+
+.btnAskDelete {
+  color: white;
+  background-color: #5cb85c;
+}

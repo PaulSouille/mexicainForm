@@ -1,6 +1,6 @@
 import { ApiProvider } from './../../providers/api/api';
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { Event } from './../../interface/Event';
 import { InAppBrowser } from '@ionic-native/in-app-browser';
 
@@ -22,9 +22,16 @@ export class DisplayEventPage {
   role_id:string;
   apiKey:string;
   user_id:string;
-  constructor(public navCtrl: NavController, public navParams: NavParams,private apiProvider : ApiProvider,private iab:InAppBrowser) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private apiProvider : ApiProvider,private iab:InAppBrowser,private AlertControl:AlertController) {
   }
-
+  setAlert(titleAlert,contentAlert){
+    let alert = this.AlertControl.create({
+      title: titleAlert,
+      subTitle: contentAlert,
+      buttons: ['Fermer']
+    });
+    alert.present();
+  }
   isLink(message){
     return (message.includes('https://'));
   }
@@ -54,7 +61,7 @@ export class DisplayEventPage {
 
   });
   }
-  ionViewDidLoad() {
+  ionViewDidLoad() { 
     this.user_id = localStorage.getItem('user_id');
     this.apiKey = localStorage.getItem('apiKey');
     this.role_id = localStorage.getItem('role_id');
@@ -63,10 +70,27 @@ export class DisplayEventPage {
   delete(id){
     this.apiProvider.deleteEvent(id,this.apiKey,this.user_id).subscribe(data=>{
       if(data['error']==="SUCCESS"){
+        this.setAlert('Succès','Element supprimé.')
         this.fillData();
       }
     })
 
 
   }
+  askDelete(id){
+    this.apiProvider.askDelete(id).subscribe(data=>{
+      if(data['error']==='SUCCESS'){
+        this.setAlert('Succès','La demande à été effectuée.')
+        this.fillData();
+      }
+    })
+  }
+  removeDelete(id){
+    this.apiProvider.removeDelete(id).subscribe(data=>{
+      if(data['error']==='SUCCESS'){
+        this.setAlert('Succès','La demande à été supprimée.')
+        this.fillData();
+      }
+    })
+  }  
 }
