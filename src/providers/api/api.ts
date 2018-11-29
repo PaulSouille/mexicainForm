@@ -36,4 +36,16 @@ export class ApiProvider {
     var url = this.baseUrl+'/event/removeDelete?message_id='+message_id;
     return this.http.get(`${url}`);
   }
+  enableUser(user_id):Observable<any>{
+    var url = this.baseUrl+'/users/enableUser?user_id='+user_id;
+    return this.http.get(`${url}`);
+  }
+  disableUser(user_id):Observable<any>{
+    var url = this.baseUrl+'/users/disableUser?user_id='+user_id;
+    return this.http.get(`${url}`);
+  }  
+  getUsers():Observable<any>{
+    var url = this.baseUrl+'/users/';
+    return this.http.get(`${url}`);
+  }  
 } 

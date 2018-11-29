@@ -25674,6 +25674,16 @@ ion-navbar.toolbar {
   min-height: calc(46px + env(safe-area-inset-bottom));
 }
 
+.btnDisable {
+  color: white;
+  background-color: #d9534f;
+}
+
+.btnEnable {
+  color: white;
+  background-color: #5cb85c;
+}
+
 page-display-event .link {
   color: blue;
 }

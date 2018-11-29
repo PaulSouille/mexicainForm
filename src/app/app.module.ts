@@ -9,6 +9,8 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { AdminPage } from '../pages/admin/admin';
+
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
@@ -19,7 +21,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     LoginPage,
-    DisplayEventPage
+    DisplayEventPage,
+    AdminPage
     
   ],
   imports: [
@@ -33,7 +36,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     MyApp,
     HomePage,
     LoginPage,
-    DisplayEventPage
+    DisplayEventPage,
+    AdminPage
   ],
   providers: [
     StatusBar,

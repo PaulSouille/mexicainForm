@@ -20,7 +20,7 @@ export class DisplayEventPage {
   events = new Array<Event>();
   ifData:boolean = false;
   role_id:string;
-  apiKey:string;
+  apiKey:string; 
   user_id:string;
   constructor(public navCtrl: NavController, public navParams: NavParams,private apiProvider : ApiProvider,private iab:InAppBrowser,private AlertControl:AlertController) {
   }
@@ -92,5 +92,5 @@ export class DisplayEventPage {
         this.fillData();
       }
     })
-  }  
+  }
 }
