@@ -11,17 +11,21 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class LoginPage {
   credentialsForm: FormGroup;
   account : Account;
- 
-  constructor(private AuthService:AuthService,private formBuilder: FormBuilder
+  isApp:Boolean=false;
+  constructor(private AuthService:AuthService,private formBuilder: FormBuilder,
     ) {
       this.credentialsForm = this.formBuilder.group({
         login: [''],
         password: [''],
       
       });
+
+
   }
 
   ionViewDidLoad() {
+    this.isApp =document.URL.startsWith('http://home.paulsouille.fr:8080/')
+
   }
 
   onSignIn() {
