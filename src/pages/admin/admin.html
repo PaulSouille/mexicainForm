@@ -19,7 +19,9 @@
 
   <ion-col col-10 style="margin: auto; padding-left: 1em;" *ngFor="let user of users">
 
-      <ion-item class="square">
+
+    
+    <ion-item class="square">
           <p class="white">{{user.name}}</p>
           <button *ngIf="user.isActive==1" ion-button clear color="light" class="btnDisable" (click)="disableUser(user.id)">Désactiver</button>
           <button *ngIf="user.isActive==0" ion-button clear color="light" class="btnEnable" (click)="enableUser(user.id)">Activer</button>

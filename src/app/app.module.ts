@@ -10,25 +10,32 @@ import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { AdminPage } from '../pages/admin/admin';
-
+import {LongPressModule} from 'ionic-long-press';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { ApiProvider } from '../providers/api/api';
 import { HttpClientModule } from '@angular/common/http';
 import { BarcodeScanner } from '@ionic-native/barcode-scanner';
+import { ExpandableComponent } from '../components/expandable/expandable';
+
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     LoginPage,
     DisplayEventPage,
-    AdminPage
+    AdminPage,
+    ExpandableComponent,
+
+
     
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    LongPressModule,
+
     
   ],
   bootstrap: [IonicApp],
@@ -48,7 +55,8 @@ import { BarcodeScanner } from '@ionic-native/barcode-scanner';
     BarcodeScanner,
     Vibration,
      InAppBrowser,
-     AlertTool
+     AlertTool,
+     LongPressModule
 
   ]
 })

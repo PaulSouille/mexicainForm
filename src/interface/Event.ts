@@ -6,5 +6,6 @@ export interface Event {
     name : number;
     isAskDelete:number;
     isLink : boolean ;
+    expanded : boolean;
 
 }
