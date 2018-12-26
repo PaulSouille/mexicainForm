@@ -18,6 +18,7 @@ import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angu
 export class AdminPage {
   users = new Array<User>();
   ifData:boolean = false;
+  
   constructor(public navCtrl: NavController,private LongPressModule : LongPressModule, private apiProvider : ApiProvider,public navParams: NavParams,private AlertControl : AlertController) {
   }
   setAlert(titleAlert,contentAlert){

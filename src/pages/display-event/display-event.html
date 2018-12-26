@@ -16,7 +16,6 @@
   
             <h2>{{event.event}}</h2>     
             <expandable [expandHeight]="itemExpandHeight" [expanded]="event.expanded">
-     
                     <p *ngIf="event.isLink" class="link" (click)="goInternet(event.response)">Liens</p>
                     <p *ngIf="!event.isLink">{{event.response}}</p>
                     <p class="red">Créateur : {{event.name}}</p>

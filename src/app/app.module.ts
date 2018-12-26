@@ -26,17 +26,12 @@ import { ExpandableComponent } from '../components/expandable/expandable';
     DisplayEventPage,
     AdminPage,
     ExpandableComponent,
-
-
-    
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     HttpClientModule,
     LongPressModule,
-
-    
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -57,7 +52,6 @@ import { ExpandableComponent } from '../components/expandable/expandable';
      InAppBrowser,
      AlertTool,
      LongPressModule
-
   ]
 })
 export class AppModule {}

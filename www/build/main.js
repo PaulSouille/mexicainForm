@@ -228,7 +228,7 @@ var DisplayEventPage = /** @class */ (function () {
     };
     DisplayEventPage = DisplayEventPage_1 = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["m" /* Component */])({
-            selector: 'page-display-event',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\display-event\display-event.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n        <ion-title>Mexicano</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n        <button detail-none (click)="expandItem(event)" ion-item *ngFor="let event of events">\n\n  \n\n            <h2>{{event.event}}</h2>     \n\n            <expandable [expandHeight]="itemExpandHeight" [expanded]="event.expanded">\n\n     \n\n                    <p *ngIf="event.isLink" class="link" (click)="goInternet(event.response)">Liens</p>\n\n                    <p *ngIf="!event.isLink">{{event.response}}</p>\n\n                    <p class="red">Créateur : {{event.name}}</p>\n\n            </expandable>\n\n            <button *ngIf="role_id==\'1\'" ion-button clear item-end (click)="delete(event.id)">Delete</button>\n\n            <button *ngIf="role_id==\'2\' " ion-button clear item-end (click)="askDelete(event.id)">Supprimer</button>\n\n\n\n        </button>\n\n      </ion-list>\n\n\n\n    <ion-item *ngIf="!ifData" class="square">\n\n        <p>Pas d\'évènements</p>\n\n\n\n    </ion-item>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\display-event\display-event.html"*/,
+            selector: 'page-display-event',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\display-event\display-event.html"*/'<ion-header>\n\n    <ion-navbar>\n\n        <button ion-button menuToggle>\n\n      <ion-icon name="menu"></ion-icon>\n\n    </button>\n\n        <ion-title>Mexicano</ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n\n\n\n\n<ion-content padding>\n\n    <ion-list>\n\n        <button detail-none (click)="expandItem(event)" ion-item *ngFor="let event of events">\n\n  \n\n            <h2>{{event.event}}</h2>     \n\n            <expandable [expandHeight]="itemExpandHeight" [expanded]="event.expanded">\n\n                    <p *ngIf="event.isLink" class="link" (click)="goInternet(event.response)">Liens</p>\n\n                    <p *ngIf="!event.isLink">{{event.response}}</p>\n\n                    <p class="red">Créateur : {{event.name}}</p>\n\n            </expandable>\n\n            <button *ngIf="role_id==\'1\'" ion-button clear item-end (click)="delete(event.id)">Delete</button>\n\n            <button *ngIf="role_id==\'2\' " ion-button clear item-end (click)="askDelete(event.id)">Supprimer</button>\n\n\n\n        </button>\n\n      </ion-list>\n\n\n\n    <ion-item *ngIf="!ifData" class="square">\n\n        <p>Pas d\'évènements</p>\n\n\n\n    </ion-item>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\display-event\display-event.html"*/,
         }),
         Object(__WEBPACK_IMPORTED_MODULE_2__angular_core__["I" /* NgModule */])({
             declarations: [
@@ -239,10 +239,10 @@ var DisplayEventPage = /** @class */ (function () {
                 __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["g" /* IonicPageModule */].forChild(DisplayEventPage_1),
             ],
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__providers_api_api__["a" /* ApiProvider */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__providers_api_api__["a" /* ApiProvider */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__["a" /* InAppBrowser */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__["a" /* InAppBrowser */]) === "function" && _d || Object, typeof (_e = typeof __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]) === "function" && _e || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["j" /* NavParams */], __WEBPACK_IMPORTED_MODULE_1__providers_api_api__["a" /* ApiProvider */], __WEBPACK_IMPORTED_MODULE_4__ionic_native_in_app_browser__["a" /* InAppBrowser */], __WEBPACK_IMPORTED_MODULE_3_ionic_angular__["a" /* AlertController */]])
     ], DisplayEventPage);
     return DisplayEventPage;
-    var DisplayEventPage_1, _a, _b, _c, _d, _e;
+    var DisplayEventPage_1;
 }());
 
 //# sourceMappingURL=display-event.js.map
@@ -287,7 +287,7 @@ var LoginPage = /** @class */ (function () {
     };
     LoginPage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-login',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n        <ion-title text-center>\n\n            <img src="assets/imgs/mexicain.png" width="100">\n\n        </ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content text-center>\n\n    <p> MexicainJS</p>\n\n    <form [formGroup]="credentialsForm">\n\n\n\n        <ion-item>\n\n            <ion-label floating>Login</ion-label>\n\n            <ion-input [formControl]="credentialsForm.controls[\'login\']" value="" type="text"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label floating>Mot de passe</ion-label>\n\n            <ion-input [formControl]="credentialsForm.controls[\'password\']" value="" type="password"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-row>\n\n            <ion-col text-center>\n\n                <button ion-button block color="button" (click)="onSignIn()">\n\n        Connexion\n\n      </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </form>\n\n    <a href="http://home.paulsouille.fr/download/mexicain.apk" *ngIf="isApp" >Télécharger l\'APK</a>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\login\login.html"*/,
+            selector: 'page-login',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\login\login.html"*/'<!--\n\n  Generated template for the LoginPage page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n\n  Ionic pages and navigation.\n\n-->\n\n<ion-header>\n\n\n\n    <ion-navbar>\n\n        <ion-title text-center>\n\n            <img src="assets/imgs/mexicain.png" width="100">\n\n        </ion-title>\n\n    </ion-navbar>\n\n\n\n</ion-header>\n\n\n\n<ion-content text-center>\n\n    <p> MexicainJS</p>\n\n    <form [formGroup]="credentialsForm">\n\n\n\n        <ion-item>\n\n            <ion-label floating>Login</ion-label>\n\n            <ion-input [formControl]="credentialsForm.controls[\'login\']" value="usersio" type="text"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-item>\n\n            <ion-label floating>Mot de passe</ion-label>\n\n            <ion-input [formControl]="credentialsForm.controls[\'password\']" value="pwsio" type="password"></ion-input>\n\n        </ion-item>\n\n\n\n        <ion-row>\n\n            <ion-col text-center>\n\n                <button ion-button block color="button" (click)="onSignIn()">\n\n        Connexion\n\n      </button>\n\n            </ion-col>\n\n        </ion-row>\n\n    </form>\n\n    <a href="http://home.paulsouille.fr/download/mexicain.apk" *ngIf="isApp" >Télécharger l\'APK</a>\n\n\n\n</ion-content>'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\login\login.html"*/,
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__service_auth_service__["a" /* AuthService */], __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormBuilder */]])
     ], LoginPage);
@@ -420,10 +420,9 @@ var ExpandableComponent = /** @class */ (function () {
         Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["m" /* Component */])({
             selector: 'expandable',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\components\expandable\expandable.html"*/'<div #expandWrapper class=\'expand-wrapper\' [class.collapsed]="!expanded">\n    <ng-content></ng-content>\n  </div>\n  '/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\components\expandable\expandable.html"*/
         }),
-        __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */]) === "function" && _a || Object])
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_core__["V" /* Renderer */]])
     ], ExpandableComponent);
     return ExpandableComponent;
-    var _a;
 }());
 
 //# sourceMappingURL=expandable.js.map
@@ -831,6 +830,7 @@ var HomePage = /** @class */ (function () {
         this.formBuilder = formBuilder;
         this.alertCtrl = alertCtrl;
         this.apiProvider = apiProvider;
+        this.ifForm = false;
         this.credentialsForm = this.formBuilder.group({
             event: [''],
             response: [''],
@@ -844,9 +844,19 @@ var HomePage = /** @class */ (function () {
         });
         alert.present();
     };
+    HomePage.prototype.setForm = function () {
+        this.ifForm = !this.ifForm ? true : false;
+    };
     HomePage.prototype.addEvent = function () {
         var _this = this;
-        this.apiProvider.addEvent(this.credentialsForm.controls['event'].value, this.credentialsForm.controls['response'].value, localStorage.getItem('user_id')).subscribe(function (data) {
+        this.event = this.credentialsForm.controls['event'].value;
+        if (this.ifForm) {
+            this.response = '```' + this.credentialsForm.controls['response'].value + '```';
+        }
+        else {
+            this.response = this.credentialsForm.controls['response'].value;
+        }
+        this.apiProvider.addEvent(this.event, this.response, localStorage.getItem('user_id')).subscribe(function (data) {
             if (data['error'] == 'ERROR_PARAM') {
                 _this.setAlert('Attention', 'Remplissez les champs.');
             }
@@ -870,7 +880,7 @@ var HomePage = /** @class */ (function () {
     };
     HomePage = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["m" /* Component */])({
-            selector: 'page-home',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mexicano</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content text-center>\n  <p> MexicainJS</p>\n  <form [formGroup]="credentialsForm">\n  \n    <ion-item>\n      <ion-label  floating>Event</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'event\']" value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label  floating>Response</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'response\']"value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block color="button" (click)="addEvent()">\n          Ajouter\n        </button>\n      </ion-col>\n    </ion-row>\n  \n  \n  \n  </form>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\home\home.html"*/
+            selector: 'page-home',template:/*ion-inline-start:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\home\home.html"*/'<ion-header>\n  <ion-navbar>\n    <button ion-button menuToggle>\n      <ion-icon name="menu"></ion-icon>\n    </button>\n    <ion-title>Mexicano</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content text-center>\n  <p> MexicainJS</p>\n  <form [formGroup]="credentialsForm">\n  \n    <ion-item>\n      <ion-label  floating>Event</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'event\']" value=""\n          type="text"></ion-input>\n    </ion-item>\n  \n    <ion-item>\n      <ion-label  floating>Response</ion-label>\n      <ion-input  [formControl]="credentialsForm.controls[\'response\']"value=""\n          type="text"></ion-input>\n    </ion-item>\n    <ion-item>\n      <ion-label>Forme</ion-label>\n      <ion-checkbox (ionChange)="setForm()"></ion-checkbox>\n    </ion-item>\n \n    <ion-row>\n      <ion-col text-center>\n        <button ion-button block color="button" (click)="addEvent()">\n          Ajouter\n        </button>\n      </ion-col>\n    </ion-row>\n  \n  \n  \n  </form>\n  </ion-content>\n'/*ion-inline-end:"C:\Users\paul-\Desktop\home.paulsouille.fr\mexicainOutils\mexicainForm\src\pages\home\home.html"*/
         }),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_2_ionic_angular__["i" /* NavController */], __WEBPACK_IMPORTED_MODULE_3__angular_forms__["a" /* FormBuilder */], __WEBPACK_IMPORTED_MODULE_2_ionic_angular__["a" /* AlertController */], __WEBPACK_IMPORTED_MODULE_0__providers_api_api__["a" /* ApiProvider */]])
     ], HomePage);

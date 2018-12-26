@@ -24,7 +24,11 @@
       <ion-input  [formControl]="credentialsForm.controls['response']"value=""
           type="text"></ion-input>
     </ion-item>
-  
+    <ion-item>
+      <ion-label>Forme</ion-label>
+      <ion-checkbox (ionChange)="setForm()"></ion-checkbox>
+    </ion-item>
+ 
     <ion-row>
       <ion-col text-center>
         <button ion-button block color="button" (click)="addEvent()">

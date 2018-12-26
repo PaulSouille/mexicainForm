@@ -12,15 +12,15 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 
 export class HomePage {
   credentialsForm: FormGroup;
-
-
+  ifForm : Boolean = false;
+  event:String;
+  response:String;
   constructor(public navCtrl: NavController,private formBuilder: FormBuilder,private alertCtrl : AlertController,private apiProvider: ApiProvider) 
   {
 
     this.credentialsForm = this.formBuilder.group({
       event: [''],
       response: [''],
-    
     });
    }
    setAlert(titleAlert,contentAlert){
@@ -31,8 +31,21 @@ export class HomePage {
     });
     alert.present();
   }
+ 
+  
+  setForm(){
+    this.ifForm = !this.ifForm ? true:false;
+    }
   addEvent() {
-      this.apiProvider.addEvent(this.credentialsForm.controls['event'].value,this.credentialsForm.controls['response'].value,localStorage.getItem('user_id')).subscribe(data => {
+      this.event = this.credentialsForm.controls['event'].value;
+
+      if(this.ifForm){
+        this.response = '```' + this.credentialsForm.controls['response'].value + '```'
+      }
+      else{
+        this.response = this.credentialsForm.controls['response'].value
+      }
+      this.apiProvider.addEvent(this.event,this.response,localStorage.getItem('user_id')).subscribe(data => {
         if(data['error']=='ERROR_PARAM'){
           this.setAlert('Attention','Remplissez les champs.')
         }
